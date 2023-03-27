@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --font: "Gruppo", cursive;
+  --btn_color: #4c5e76;
+  --lighter_btn: #596775;
+  --light_hover: #676d72;
+}
+
+::placeholder{
+  color: var(--white);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: rgb(0,0,0);
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+/*******************************************NAVBAR******************************************/
+
+nav {
+  font-size: 90%;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:before {
+  content: "[";
+  margin-right: 10px;
+  display: inline-block;
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+nav a:after {
+  content: "]";
+  margin-left: 10px;
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/******************************************CONTENT*************************************/
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.container {
+    border: 1px solid #fff;
+    width: 350px;
+    height: 650px;
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-family: var(--font);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+/******************************************RESPONSIVITY*************************************/
+
+@media (min-width: 850px) {
+    nav {
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+  
+    nav li:first-child {
+      flex-basis: auto;
+      text-align: left;
+      margin-right: auto;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+    }
+    
+    .container {
+        margin-top: 80px;
+        width: 750px;
+        height: 550px;
+        padding: 90px;
+    }
+}

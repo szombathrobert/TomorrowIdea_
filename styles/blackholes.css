@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --font: "Gruppo", cursive;
+  --btn_color: #4c5e76;
+  --lighter_btn: #596775;
+  --light_hover: #676d72;
+}
+
+::placeholder{
+  color: var(--white);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  background: url('../assets/blackhole.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  font-size: 1.3rem;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+/*******************************************NAVBAR******************************************/
+
+nav {
+    font-size: 90%;
+    padding: 2rem;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  
+  nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav a:before {
+    content: "[";
+    margin-right: 10px;
+    display: inline-block;
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+  }
+  
+  nav a:after {
+    content: "]";
+    margin-left: 10px;
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  
+  nav a:hover:before,
+  nav a:hover:after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  
+/*******************************************LANDING******************************************/
+
+
+.welcome {
+  margin: 20px;
+  min-height: 100vh;
+}
+
+/*******************************************SWIPER GALLERY******************************************/
+
+
+.swiper {
+  width: 700px;
+  height: 500px;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+}
+
+/*******************************************CARD******************************************/
+
+
+.card {
+  margin: 50px auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-body{
+  background: rgba(255, 255, 255, 0.356);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 2px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid var(--white);
+}
+
+.card-body h2{
+  font-size: 3rem;
+  color: var(--black);
+  font-weight: 800;
+  margin: 10px;
+}
+
+.card-body p{
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: 600;
+  padding: 15px;
+}
+/******************************************RESPONSIVITY*************************************/
+
+@media (min-width: 850px) {
+    nav {
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+  
+    nav li:first-child {
+      flex-basis: auto;
+      text-align: left;
+      margin-right: auto;
+    }
+  
+    .welcome {
+      margin: 20px;
+      text-align: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: 50%;
+      min-height: 20vh;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .card {
+      width: 50%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card-body h2{
+      font-size: 3.5rem;
+      color: var(--black);
+      font-weight: bolder;
+    }
+
+    .card-body p{
+      font-size: 1.3rem;
+      color: var(--black);
+      font-weight: bolder;
+      padding: 10px;
+    }
+
+  }
+
+@media (max-width: 850px){
+  .swiper {
+    width: 300px;
+    height: 250px;
+  }
+}

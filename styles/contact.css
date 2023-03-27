@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --font: "Gruppo", cursive;
+  --btn_color: #4c5e76;
+  --lighter_btn: #596775;
+  --light_hover: #676d72;
+}
+
+::placeholder{
+  color: var(--white);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+}
+
+body {
+  background-color: var(--black);
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+/*******************************************NAVBAR******************************************/
+
+nav {
+  font-size: 90%;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:before {
+  content: "[";
+  margin-right: 10px;
+  display: inline-block;
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+nav a:after {
+  content: "]";
+  margin-left: 10px;
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/******************************************CONTACT US*************************************/
+
+.contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/contact.jfif') ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
+  .contact h1{
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding: 1rem;
+    letter-spacing: 2px;
+  }
+  
+  input[type=text]{
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    color: var(--white);
+    padding: .8rem;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  
+  input[type=email]{
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    color: var(--white);
+    padding: .8rem;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .message {
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    color: var(--white);
+    padding: .8rem;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  input[type=submit]{
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 25%;
+    color: var(--white);
+    padding: .8rem;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    margin-bottom: 25px;
+  }
+  
+  input[type=submit]:hover{
+    background-color: var(--btn_color);
+    transition: .5s ease-in-out;
+    transform: scale(1.1);
+  }
+  
+
+  /******************************************RESPONSIVITY*************************************/
+
+@media (min-width: 850px) {
+    nav {
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+  
+    nav li:first-child {
+      flex-basis: auto;
+      text-align: left;
+      margin-right: auto;
+    }
+
+}
